@@ -1,0 +1,10 @@
+<div class="eventview">
+
+    <table>
+        <tr id="playhead"><td class="rownum"></td><td ng-repeat="step in stepCount track by $index" ng-class="'step'+($index+1)"></td></tr>
+        <tr ng-repeat="track in tracks track by $index">
+            <td class="rownum">{{$index+1}}</td>
+            <td ng-repeat="step in track" ng-class="[(step.note != null) ? 'fill row'+($parent.$index+1) : 'empty', (($index+1) % 4 == 0) ? 'separate':'']"></td>
+        </tr>
+    </table>
+</div>

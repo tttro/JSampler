@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en" ng-app="app" >
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <title>JSampler</title>
+    <link href='http://fonts.googleapis.com/css?family=Roboto' rel='stylesheet' type='text/css'>
+    <link media="screen" rel="stylesheet" href="bower_components/normalize.css/normalize.css">
+    <link media="screen" rel="stylesheet" href="//maxcdn.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.min.css">
+    <link media="screen" rel="stylesheet" href="styles/main.css">
+
+    <link href="icon.png" rel="apple-touch-icon" />
+
+
+    <script src="bower_components/underscore/underscore-min.js"></script>
+</head>
+<body class="samplerFrame" ng-controller="MainController" >
+<div class="splash" ng-cloak="">
+    <p>Loading</p>
+</div>
+<header class="sampler-head">
+    <div class="button" ng-click="restart($event)"><i class="fa fa-step-backward"></i></div>
+    <div class="button" ng-click="play($event)" ><i class="fa fa-play"></i> </div>
+    <div class="button" ng-click="record($event)" ><i class="fa fa-circle"></i></div>
+    <div class="tempoGroup">
+        <div class="button"  ng-click="tempoDown()">-</div>
+        <input type="text" id="tempoInput" name="tempo" ng-model="tempo" ng-change="tempoChanged()" maxlength="3"  />
+        <div class="button"  ng-click="tempoUp()">+</div>
+    </div>
+    <div class="button active" ng-click="toggleMetronome()" >M</div>
+    <div class="button" ><i class="fa fa-cog"></i></div>
+    <div class="button" ><i class="fa fa-sliders"></i></div>
+</header>
+<div class="container">
+
+    <eventview></eventview>
+
+
+    <details></details>
+
+    <div id="pads" ng-include="'templates/pads.html'"></div>
+
+</div>
+<!-- libs -->
+<script src="bower_components/angular/angular.js"></script>
+<script src="bower_components/angular-route/angular-route.js"></script>
+
+<script src="app.js"></script>
+<script src="controllers/controllers.js"></script>
+<script src="directives/pad.js"></script>
+<script src="directives/details.js"></script>
+<script src="directives/keyboard.js"></script>
+<script src="directives/eventView.js"></script>
+<script src="models/audioContext.js"></script>
+<script src="models/display.js"></script>
+<script src="models/soundEngine.js"></script>
+<script src="models/sequencer.js"></script>
+
+
+</body>
+</html>

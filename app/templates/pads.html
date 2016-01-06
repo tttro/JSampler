@@ -1,0 +1,16 @@
+<div ng-controller="PadController" >
+    <div id="inputField" >
+        <div class="padArea" ng-show="padMode == 'pads'">
+            <button ng-repeat="i in padCount track by $index" pad value="{{$index}}" class="pad">{{$index+1}}</button>
+
+        </div>
+        <div class="keyboardArea" ng-show="padMode == 'keyboard'">
+            <keyboard></keyboard>
+            Coming later...
+        </div>
+    </div>
+    <div class="padMode">
+        <button ng-click="selectPads()" class="pad">Pads</button>
+        <button ng-click="selectKeyboard()" class="pad">Keys</button>
+    </div>
+</div>
