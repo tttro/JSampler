@@ -1,0 +1,26 @@
+{
+  "name": "jsampler",
+  "version": "0.0.1",
+  "description": "JSampler drum machine",
+  "main": "app.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/tttro/JSampler.git"
+  },
+  "author": "Tero Taipale",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/tttro/JSampler/issues"
+  },
+  "homepage": "https://github.com/tttro/JSampler#readme",
+  "dependencies": {
+    "angular": "^1.5.5",
+    "angular-animate": "^1.5.5",
+    "angular-route": "^1.5.5",
+    "normalize.css": "^4.1.1",
+    "underscore": "^1.8.3"
+  }
+}
