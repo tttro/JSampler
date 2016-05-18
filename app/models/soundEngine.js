@@ -12,20 +12,16 @@ angular.module('app.models')
         SoundEngine.prototype.play = function() {
 
             if( this.buffer ) {
-                try{
-                    this.source = this.audioContext.createBufferSource(); // Create buffer source
-                    this.gainNode = this.audioContext.createGain();
-                    this.source.buffer = this.buffer; // Set buffer
-                    this.source.connect(this.gainNode); // Set gain
-                    this.gainNode.connect(this.audioContext.destination); // Set sound
-                    this.source.start(0); // Play
 
-                    Display.drawWaveForm(this.buffer);
-                    Display.setSoundName(this.fileName);
-                }
-                catch(e){
-                    console.log(e);
-                }
+                this.source = this.audioContext.createBufferSource(); // Create buffer source
+                this.gainNode = this.audioContext.createGain();
+                this.source.buffer = this.buffer; // Set buffer
+                this.source.connect(this.gainNode); // Set gain
+                this.gainNode.connect(this.audioContext.destination); // Set sound
+                this.source.start(0); // Play
+
+                Display.drawWaveForm(this.buffer);
+                Display.setSoundName(this.fileName);
 
             }
 

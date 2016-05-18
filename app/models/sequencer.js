@@ -17,7 +17,7 @@ angular.module('app.models')
         var _isPlaying = false;
         var _isRecording = false;
 
-        var _audioContext = AudioContext;
+        var _audioContext = AudioContext || null;
         var _tracks = [];
         var _padCount = 8;
         var _stepCount = 16;
@@ -53,7 +53,7 @@ angular.module('app.models')
             // Loop through every sound from the tracks
             // TODO: play current step sounds
             _.each(_tracks, function(sound, row){
-                if(sound[_currentStep].note != null && sound[_currentStep].note != undefined) {
+                if( sound[_currentStep].note ) {
                     angular.element(sound[_currentStep].note).triggerHandler('click');
                 }
             });
